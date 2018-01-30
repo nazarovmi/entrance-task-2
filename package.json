@@ -1,0 +1,21 @@
+{
+  "name": "shri-2018",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Nazarov MI <m@nazarov-mi.ru>",
+  "license": "ISC",
+  "main": "sass/app.sass",
+  "scripts": {
+    "build-clean": "rimraf css",
+    "build-sass": "node-sass --output-style expanded --source-map true sass/app.sass css/style.css",
+    "build-autoprefix": "postcss --use autoprefixer --map false --output css/style.css css/style.css",
+    "build": "npm run build-clean && npm run build-sass && npm run build-autoprefix",
+    "dev": "npm run build-sass -- --watch ./sass"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.2.3",
+    "node-sass": "^4.7.2",
+    "postcss-cli": "^4.1.1",
+    "rimraf": "^2.6.2"
+  }
+}
